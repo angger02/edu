@@ -3,45 +3,30 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Home
 Route::get('/', function () {
-    return view('home'); // nanti buat file home.blade.php
-});
+    return view('home');
+})->name('home');
 
-// About
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
 
-// Group untuk Program
-Route::prefix('program')->group(function () {
-    // /program
-    Route::get('/', function () {
-        return view('program');
-    });
-
-    // /program/{id} → parameter
-    Route::get('/{id}', function ($id) {
-        return view('program-detail', ['id' => $id]);
-    });
-});
-
-// Our Team
-Route::get('/team', function () {
-    return view('team');
-});
-
-// Contact Us
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
-// Redirect dari /old-contact → /contact
-Route::get('/old-contact', function () {
-    return redirect('/contact');
-});
+Route::get('/program', function () {
+    return view('program');
+})->name('program');
 
-// Fallback (jika route tidak ditemukan)
+Route::get('/program-detail', function () {
+    return view('program-detail');
+})->name('program.detail');
+
+Route::get('/team', function () {
+    return view('team');
+})->name('team');
+
 Route::fallback(function () {
     return view('404');
 });
