@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <span class="fw-bolder text-primary">Start Bootstrap</span>
+                    <span class="fw-bolder text-primary">Angger Hidayat</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent">
@@ -44,11 +44,20 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5 text-center">
-            <small class="text-muted">&copy; {{ date('Y') }} Personal Website</small>
-        </div>
-    </footer>
+     <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2025</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="{{ route('team') }}">Team</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="{{ route('contact') }}">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     <!-- Core theme JS -->
    <script src="{{ asset('js/scripts.js') }}"></script>

@@ -30,3 +30,6 @@ Route::get('/team', function () {
 Route::fallback(function () {
     return view('404');
 });
+
+Route::get('/program/{id}', fn($id) => view('program-detail', ['id' => $id]))->name('program.detail');
+
